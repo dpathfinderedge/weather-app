@@ -1,0 +1,210 @@
+
+:root {
+    --main-bg: #0a1f44;
+    --text-light: #fff;
+    --text-med: #53627c;
+    --text_dark: #1e2432;
+    --red: #ff1e42;
+    --darkred: #c3112d;
+    --orange: #ff8c00;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+body {
+    background: var(--main-bg);
+    color: var(--text_dark);
+    font-size: 1rem/0.3;
+    font-family: "Roboto", sans-serif;
+    padding: 70px;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+button, 
+input {
+    border: none;
+    background: none;
+    outline: none;
+    color: inherit;
+}
+
+.pry-section {
+    color: var(--text-light);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.heading {
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    padding: 0 0 30px 0;
+}
+
+.pry-section form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.pry-section form input {
+    font-size: 2rem;
+    padding: 5px 5px 10px;
+    height: 40px;
+    border-bottom: 1px solid;
+}
+
+.pry-section form input::placeholder {
+    color: currentColor;
+}
+
+.pry-section form button {
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin-left: 15px;
+    background-color: var(--red);
+    color: var(--text-light);
+}
+
+.pry-section form button:hover {
+    background-color: var(--darkred);
+}
+
+.pry-section .err-msg {
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    max-width: 450px;
+    min-height: 40px;
+}
+
+.sec-section {
+    margin: 70px 0 20px ;
+}
+
+ul {
+    list-style: none;
+}
+
+.sec-section .cities {
+    display: grid;
+    grid-gap: 32px 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.sec-section .city {
+    padding: 40px 10%;
+    border-radius: 20px;
+    background: var(--text-light);
+    color: var(--text-med);
+}
+
+.sec-section .city sup {
+    font-size: 0.5em;
+}
+
+.sec-section .city-name sup {
+    background: var(--orange);
+    color: var(--text-light);
+    border-radius: 30px;
+    padding: 0.2em 0.6em;
+}
+
+.sec-section .city-temp {
+    font-size: 5rem;
+    font-weight: bold;
+    color: var(--text_dark);
+    margin-top: 10px;
+}
+
+.sec-section .city-icon {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.sec-section figcaption {
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        padding: 30px;
+    }
+
+    .sec-section .cities {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .heading,
+    .sec-section .city-temp {
+        font-size: 3rem;
+    }
+
+    .sec-section {
+        margin-top: 20px;
+    }
+
+    .pry-section form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pry-section form input,
+    .pry-section form button {
+        width: 100%;
+    }
+
+    .pry-section form button {
+        margin: 20px 0 0 0;
+    }
+
+    .pry-section .err-msg {
+        position: static;
+        max-width:  none;
+        min-height: 0;
+        margin-top: 10px;
+    }
+
+    .sec-section .cities {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        padding: 15px;
+    }
+
+    .sec-section .cities {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
